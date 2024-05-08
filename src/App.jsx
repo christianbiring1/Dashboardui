@@ -1,9 +1,10 @@
 import './App.css'
+import DashboardComponent from './components/dashboard'
 
 function App() {
   return (
     <>
-      <p>Set up</p>
+      <DashboardComponent />
     </>
   )
 }
