@@ -7,13 +7,28 @@
 html {
   /* font-size: 62.5%; */
   font-family: 'Inter';
+  color: #172554;
+}
+
+.sidebar ::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar ::-webkit-scrollbar-thumb {
+  background: #8F9AA8;
+  border-radius: 5px;
 }
 
 
 .card-content {
-  background-color: rgba(142, 199, 214, 0.8);
+  /* background-color: #df8db2; */
   padding: 1rem;
   border-radius: 0.5rem;
+  min-width: 200px;
   /* padding: 1rem; */
   /* border-radius: 0.4rem; */
   /* font-size: 1.6rem; */

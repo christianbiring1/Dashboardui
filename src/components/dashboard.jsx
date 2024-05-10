@@ -39,7 +39,7 @@ const DashboardComponent = () => {
         >
           <Box sx={{ display: 'flex', padding: '1rem 2rem 0', margin: '1rem 0', alignItems: 'center', gap: '1rem'}}>
             <Avatar />
-            <Typography>Droitdash</Typography>
+            <p className="text-xl font-semibold">Droitdash</p>
           </Box>
           <nav aria-label="main nav links">
             <List>
@@ -71,7 +71,15 @@ const DashboardComponent = () => {
                 <AccordionDetails>
                   <ListItem disablePadding>
                     <ListItemButton
-                      sx={{ margin: '0', padding: '0'}}
+                      sx={{
+                          borderRadius: '8px',
+                          margin: '0',
+                          paddingLeft: '0',
+                          '&:hover': {
+                            backgroundColor: 'rgba(203, 213, 224, 0.3)',
+                            borderRadius: '8px'
+                          }
+                        }}
                     >
                       <ListItemIcon>
                         <Assessment sx={ iconStyles }/>
@@ -116,7 +124,15 @@ const DashboardComponent = () => {
                   <nav aria-label="secondary mailbox folders">
                     <List sx={{ paddingTop: '0', paddingLeft: '2rem'}}>
                       <ListItem disablePadding>
-                        <ListItemButton>
+                        <ListItemButton 
+                        sx={{
+                          borderRadius: '8px',
+                          '&:hover': {
+                            backgroundColor: 'rgba(203, 213, 224, 0.3)',
+                            borderRadius: '8px'
+                          }
+                        }}
+                        >
                           <ListItemText>
                             <Circle
                             sx={{ width: '10px', marginRight: '10px', position: 'relative', top: '5px'}}
@@ -127,7 +143,16 @@ const DashboardComponent = () => {
                         </ListItemButton>
                       </ListItem>
                       <ListItem disablePadding>
-                        <ListItemButton component="a" href="#simple-list">
+                        <ListItemButton
+                          component="a" href="#simple-list"
+                          sx={{
+                          borderRadius: '8px',
+                          '&:hover': {
+                            backgroundColor: 'rgba(203, 213, 224, 0.3)',
+                            borderRadius: '8px'
+                          }
+                        }}
+                        >
                           <ListItemText>
                             <Circle
                             sx={{ width: '10px', marginRight: '10px', position: 'relative', top: '5px'}}
@@ -138,7 +163,16 @@ const DashboardComponent = () => {
                         </ListItemButton>
                       </ListItem>
                       <ListItem disablePadding>
-                        <ListItemButton component="a" href="#simple-list">
+                        <ListItemButton
+                          sx={{
+                          borderRadius: '8px',
+                          '&:hover': {
+                            backgroundColor: 'rgba(203, 213, 224, 0.3)',
+                            borderRadius: '8px'
+                          }
+                        }}
+                          component="a" href="#simple-list"
+                        >
                           <ListItemText>
                             <Circle
                               sx={{ width: '10px', marginRight: '10px', position: 'relative', top: '5px'}}
@@ -166,7 +200,15 @@ const DashboardComponent = () => {
                   </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
-                  <ListItemButton>
+                  <ListItemButton
+                    sx={{
+                          borderRadius: '8px',
+                          '&:hover': {
+                            backgroundColor: 'rgba(203, 213, 224, 0.3)',
+                            borderRadius: '8px'
+                          }
+                        }}
+                  >
                     <ListItemIcon>
                       <Notifications sx={ iconStyles }/>
                     </ListItemIcon>
@@ -180,13 +222,13 @@ const DashboardComponent = () => {
                 </ListItem>
             </List>
           </nav>
-          <div className="mx-5 my-20">
+          <div className="mx-5 my-20 max-w-sm rounded shadow-lg card-content" style={{ backgroundColor: 'rgba(203, 213, 224, 0.3)'}}>
             <div className="flex items-center justify-between mb-8">
-              <Avatar />
+              <Avatar src="https://picsum.photos/id/64/200/300"/>
               <ArrowForward />
             </div>
-            <p className="text-xl text-gray-300">WPR Pascal</p>
-            <p className="text-gray-500 text-sm">random@gmail.com</p>
+            <p className="text-xl text-gray-300 font-semibold">WPR Pascal</p>
+            <p className="text-gray-400 text-sm mt-2">random@gmail.com</p>
           </div>
         </Drawer>
       <Box
