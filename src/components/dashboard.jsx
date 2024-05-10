@@ -8,6 +8,10 @@ import { Dashboard, Assessment, DonutSmall, DescriptionOutlined, Notifications,
 
 import Content from "./content";
 
+const iconStyles = {
+  color: '#ecfdf5',
+}
+
 
 const DashboardComponent = () => {
   return (
@@ -21,11 +25,13 @@ const DashboardComponent = () => {
             width: '60%',
             maxWidth: '220px',
             overflowX: 'hidden',
+            fontSize: '1.6rem',
             '& .MuiDrawer-paper': {
               width: '60%',
               maxWidth: '280px',
               overflowX: 'hidden',
-              // backgroundColor: '#000'
+              backgroundColor: '#172554',
+              color: '#ecfdf5',
             }
           }}
           className="bg-indigo-950"
@@ -36,20 +42,22 @@ const DashboardComponent = () => {
           </Box>
           <nav aria-label="main nav links">
             <List>
-              <Accordion sx={{ boxShadow: 'none', border: 'none', '&:before': { display: 'none' } }}>
+              <Accordion sx={{
+                boxShadow: 'none', border: 'none', '&:before': { display: 'none' },
+                backgroundColor: '#172554', color: '#ecfdf5' }}
+              >
                 <AccordionSummary
-                  expandIcon={<ExpandMore />}
+                  expandIcon={<ExpandMore sx={{ color: '#ecfdf5'}}/>}
                   aria-controls="panel1-content"
                   id="panel1-header"
-                  // sx={{ margin: '0'}}
-                  style={{ margin: '0'}}
+                  style={{ margin: '0' }}
                 >
                   <ListItem disablePadding>
                     <ListItemButton
                       sx={{ margin: '0', padding: '0' }}
                     >
                       <ListItemIcon>
-                        <Dashboard />
+                        <Dashboard sx={ iconStyles }/>
                       </ListItemIcon>
                       <ListItemText sx={{ marginLeft: '-1rem'}}>
                           <Typography variant='body1'>
@@ -65,7 +73,7 @@ const DashboardComponent = () => {
                       sx={{ margin: '0', padding: '0'}}
                     >
                       <ListItemIcon>
-                        <Assessment />
+                        <Assessment sx={ iconStyles }/>
                       </ListItemIcon>
                       <ListItemText sx={{ marginLeft: '-1rem'}}>
                           <Typography variant='body1'>
@@ -75,14 +83,15 @@ const DashboardComponent = () => {
                     </ListItemButton>
                   </ListItem>
                 </AccordionDetails>
-                <Divider />
+                <Divider sx={{ backgroundColor: '#737373'}}/>
               </Accordion>
               <Accordion
               defaultExpanded
-                sx={{ boxShadow: 'none', border: 'none', '&:before': { display: 'none' } }}
+                sx={{ boxShadow: 'none', border: 'none', '&:before': { display: 'none' },
+                backgroundColor: '#172554', color: '#ecfdf5'}}
               >
                 <AccordionSummary
-                  expandIcon={<ExpandMore />}
+                  expandIcon={<ExpandMore sx={{ color: '#ecfdf5'}} />}
                   aria-controls="panel1-content"
                   id="panel1-header"
                   style={{ margin: '0'}}
@@ -92,7 +101,7 @@ const DashboardComponent = () => {
                       sx={{ margin: '0', padding: '0' }}
                     >
                       <ListItemIcon>
-                        <DonutSmall />
+                        <DonutSmall sx={ iconStyles }/>
                       </ListItemIcon>
                       <ListItemText sx={{ marginLeft: '-1rem'}}>
                           <Typography variant='body1'>
@@ -141,12 +150,12 @@ const DashboardComponent = () => {
                     </List>
                   </nav>
                 </AccordionDetails>
-                <Divider />
+                <Divider sx={{ backgroundColor: '#737373'}}/>
               </Accordion>
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
-                      <DescriptionOutlined />
+                      <DescriptionOutlined sx={ iconStyles }/>
                     </ListItemIcon>
                     <ListItemText>
                         <Typography variant='body1'>
@@ -158,7 +167,7 @@ const DashboardComponent = () => {
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
-                      <Notifications />
+                      <Notifications sx={ iconStyles }/>
                     </ListItemIcon>
                     <ListItemText>
                       <Typography variant='body1'>

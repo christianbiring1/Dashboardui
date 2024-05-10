@@ -1,20 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;900&family=Manrope:wght@200..800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 html {
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
+  font-family: 'Inter';
 }
 
-.card-container {
-  background-color: aqua;
+
+.card-content {
+  background-color: rgba(142, 199, 214, 0.8);
   padding: 1rem;
-  border-radius: 0.4rem;
-  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  /* padding: 1rem; */
+  /* border-radius: 0.4rem; */
+  /* font-size: 1.6rem; */
 }
 
-.card-container .title {
-  font-size: 1.6rem;
+.card-content .title {
+  font-size: 1rem;
+  /* font-size: 10px; */
   opacity: 0.7;
 }
 
@@ -22,13 +29,13 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1.5rem 0;
-  min-width: 220px;
+  /* gap: 1rem; */
+  /* padding: 1.5rem 0; */
+  /* min-width: 220px; */
 }
 
 .details .number {
-  font-size: 3rem;
+  /* font-size: 3rem; */
   font-weight: bold;
 }
 
@@ -36,8 +43,15 @@ html {
   background-color: #fff;
   color: grey;
   border: 1px solid transparent;
-  border-radius: 0.1rem;
-  margin-left: 3rem;
-  padding: 0.5rem;
-  font-size: 1.2rem;
+  /* border-radius: 0.1rem; */
+  /* margin-left: 3rem; */
+  /* padding: 0.5rem; */
+  /* font-size: 1.2rem; */
+}
+
+.graphs {
+  border: 1px solid grey;
+  /* border-radius: 0.5rem; */
+  /* margin: 2rem 0; */
+  min-height: 300px;
 }
