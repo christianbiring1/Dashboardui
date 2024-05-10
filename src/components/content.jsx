@@ -6,10 +6,10 @@ import {
 } from 'recharts';
 import {
   Button, TextField, InputAdornment, IconButton, Tab, Tabs, Divider,
-  createTheme, ThemeProvider
+  createTheme, ThemeProvider, Paper, Typography, Avatar, AvatarGroup
 } from "@mui/material";
 import {
-  ArrowDropDown, ArrowDropUp, FilterList, GetApp, KeyboardArrowDown, MoreHoriz,
+  ArrowDropDown, ArrowDropUp, Circle, FilterList, GetApp, KeyboardArrowDown, MoreHoriz,
   NotificationsNone, PanoramaWideAngle, PentagonTwoTone, Percent, Search, Settings,
   Star
 } from "@mui/icons-material";
@@ -66,6 +66,35 @@ function Content() {
     textTransform: 'unset',
     paddingBottom: '0',
   };
+
+    const revenueData = [
+      { month: 'Jan', revenue: 1000, consultationFees: 2000 },
+      { month: 'Feb', revenue: 1500, consultationFees: 2500 },
+      { month: 'Mar', revenue: 2000, consultationFees: 1100 },
+      { month: 'Apr', revenue: 2500, consultationFees: 1400 },
+      { month: 'May', revenue: 2000, consultationFees: 2600 },
+      { month: 'Jun', revenue: 1000, consultationFees: 800 },
+      { month: 'Jul', revenue: 3000, consultationFees: 1000 },
+      { month: 'Aug', revenue: 2000, consultationFees: 500 },
+      { month: 'Sept', revenue: 3000, consultationFees: 900 },
+      { month: 'Oct', revenue: 2700, consultationFees: 300 },
+      { month: 'Nov', revenue: 3000, consultationFees: 1500 },
+      { month: 'Dec', revenue: 2200, consultationFees: 1000 },
+    ];
+
+     const feeData = [
+  { day: 1, fee: 500 },
+  { day: 2, fee: 800 },
+  { day: 3, fee: 300 },
+  { day: 4, fee: 1000 },
+  { day: 5, fee: 950 },
+  { day: 6, fee: 1200 },
+  { day: 7, fee: 1100 },
+  { day: 8, fee: 800 },
+  { day: 9, fee: 1000 },
+  { day: 10, fee: 1600 },
+  { day: 11, fee: 1500 }
+];
 
   return (
     <>
@@ -194,13 +223,25 @@ function Content() {
                   </IconButton>
                 </div>
               </div>
-              <p className="font-extralight text-blue-950 ml-5">Avarg per month</p>
-              <div className="ml-5 flex items-center gap-2">
-                <p className="text-3xl font-semibold">$38,500</p>
+                <p className="font-extralight text-blue-950 ml-5">Avarg per month</p>
+                <div className="ml-5 flex items-center gap-2 mb-10">
+                  <p className="text-3xl font-semibold">$38,500</p>
                 <div>
                   <ArrowDropUp sx={{ color: 'green'}}/>
                   <ArrowDropDown sx={{ color: 'red'}}/>
                 </div>
+              </div>
+              <div>
+                <ResponsiveContainer width="95%" height={200}>
+                  <BarChart data={revenueData} margin={{ top: 20, right: 0, left: -20, bottom: 5 }}>
+                    <CartesianGrid stroke='#ccc' strokeWidth={0} />
+                    <XAxis dataKey="month" tick={{fontSize: 12}}/>
+                    <YAxis tick={{fontSize: 12}}/>
+                    <Tooltip />
+                    {/* <Legend /> */}
+                    <Bar barSize={25} type="monotone" dataKey="revenue" fill='rgba(128, 128, 128, 0.5)'/>
+                  </BarChart>
+                </ResponsiveContainer>
               </div>
             </div>
             <div className="rounded overflow-hidden shadow-lg">
@@ -216,7 +257,7 @@ function Content() {
                       <GetApp sx={{ opacity: 0.5, fontSize: '1.2rem'}}/>
                     </IconButton>
                     <IconButton>
-                      <MoreHoriz sx={{ opacity: 0.5, fontSize: '1.2rem'}}/>rgba(0, 0, 255, 1)
+                      <MoreHoriz sx={{ opacity: 0.5, fontSize: '1.2rem'}}/>
                     </IconButton>
                   </div>
               </div>
@@ -236,7 +277,27 @@ function Content() {
                   </IconButton>
                 </div>
               </div>
-              <div className="graph-cont"></div>
+              <div className="">
+                <ResponsiveContainer width="100%" height={300}>
+                <LineChart data={revenueData} margin={{ top: 20, right: 0, left: -20, bottom: 5 }}>
+                  <CartesianGrid stroke='transparent' strokeWidth={0.5} />
+                  <XAxis dataKey="month" tick={{fontSize: 12}}/>
+                  <YAxis tick={{fontSize: 12}}/>
+                  {/* <Tooltip /> */}
+                  {/* <Legend /> */}
+                  <Line type="monotone" dataKey="revenue" stroke="#006cff" name='eCommerce' dot={false}/>
+                  <Line type="monotone" dataKey="consultationFees" stroke="#f43f1c" name="Consultation Fees" dot={false}/>
+                </LineChart>
+              </ResponsiveContainer>
+              <div className="flex justify-center items-center my-8">
+                <span className="px-1 text-sm font-semibold"><Circle sx={{ width: 5}}/>10%</span>
+                <span className="px-1 text-sm font-semibold"><Circle sx={{ width: 5}}/>20%</span>
+                <span className="px-1 text-sm font-semibold"><Circle sx={{ width: 5}}/>40%</span>
+                <span className="px-1 text-sm font-semibold"><Circle sx={{ width: 5}}/>60%</span>
+                <span className="px-1 text-sm font-semibold"><Circle sx={{ width: 5}}/>80%</span>
+                {/* <span className="px-1 text-sm font-semibold"><Circle sx={{ width: 5}}/>10%</span> */}
+              </div>
+              </div>
             </div>
             <div
               style={{ backgroundColor: 'rgba(191, 219, 254, 0.8)'}}
@@ -251,13 +312,40 @@ function Content() {
                   </span>
                 </div>
               </div>
-              <div className="graph-cont"></div>
+              <p className="font-extralight text-blue-950 ml-5">Avarg per month</p>
+                <div className="ml-5 flex items-center gap-2 mb-10">
+                  <p className="text-3xl font-semibold">$38,500</p>
+                  <div>
+                    <Paper elevation={3} variant="outlined" sx={{ px: 1, backgroundColor: '#34d399' }}> {/* Customize padding as needed */}
+                      <Typography variant="body1" sx={{ fontSize: '13px', color: '#fff'}}>
+                        3,200$
+                      </Typography>
+                    </Paper>
+                  </div>
+                  </div>
+              <div className="graph-cont">
+                <ResponsiveContainer width="100%" height={200}>
+                  <AreaChart data={feeData} margin={{ top: 20, right: 0, left: -10, bottom: 5 }}>
+                    <CartesianGrid stroke='#ccc' strokeWidth={0.3} />
+                    <XAxis dataKey="day" tick={{ fontSize: 12}}/>
+                    <YAxis type="number" domain={[0, 1800]} tick={{ fontSize: 12}}/>
+                    <Tooltip />
+                    <Area type="monotone" dataKey="fee" stroke="#f43f1c" fill="url(#colorUv)" />
+                    <defs>
+                      <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="15%" stopColor="#f43f1c" stopOpacity={0.5} />
+                        <stop offset="85%" stopColor="#f43f1c" stopOpacity={0.2} />
+                      </linearGradient>
+                    </defs>
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
             </div>
             <div
               style={{ backgroundColor: 'rgba(207, 250, 254, 0.8)'}}
               className="max-w-sm rounded overflow-hidden shadow-lg"
             >
-              <div className="flex justify-between items-center gap-2 py-4 px-5">
+              <div className="flex justify-between items-center gap-1 py-4 px-5">
                 <ThemeProvider theme={theme}>
                   <Button
                     variant='contained'
@@ -271,10 +359,17 @@ function Content() {
                   <p className="m-0 font-semibold">Total Orders</p>
                   <p className="text-xs">Sept 01 to Oct 01,2023</p>
                 </div>
-                <div>
-                </div>
-              </div>
-              <div className="graph-cont"></div>
+                <AvatarGroup
+                  // sx={{ width: '20%'}}
+                >
+                  <Avatar alt="Remy Sharp" src="https://picsum.photos/id/64/200/300"  sx={{ width: 20, height: 20}}/>
+                  <Avatar alt="Travis Howard" src="https://picsum.photos/id/64/200/300" sx={{ width: 20, height: 20}}/>
+                  <Avatar alt="Agnes Walker" src="https://picsum.photos/id/64/200/300" sx={{ width: 20, height: 20}}/>
+                </AvatarGroup>
+              <div>
+            </div>
+          </div>
+          <div className="graph-cont"></div>
             </div>
           </div>
         </div>

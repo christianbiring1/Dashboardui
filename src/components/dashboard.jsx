@@ -5,7 +5,8 @@ import {
 } from "@mui/material";
 import { Dashboard, Assessment, DonutSmall, DescriptionOutlined, Notifications,
   ExpandMore, Circle, 
-  ArrowForward} from '@mui/icons-material';
+  ArrowForward,
+  PentagonTwoTone} from '@mui/icons-material';
 
 import Content from "./content";
 
@@ -38,7 +39,9 @@ const DashboardComponent = () => {
           className="sidebar"
         >
           <Box sx={{ display: 'flex', padding: '1rem 2rem 0', margin: '1rem 0', alignItems: 'center', gap: '1rem'}}>
-            <Avatar />
+            <Avatar>
+              <PentagonTwoTone sx={{ color: '#edf2f7'}}/>
+            </Avatar>
             <p className="text-xl font-semibold">Droitdash</p>
           </Box>
           <nav aria-label="main nav links">
@@ -222,7 +225,7 @@ const DashboardComponent = () => {
                 </ListItem>
             </List>
           </nav>
-          <div className="mx-5 my-20 max-w-sm rounded shadow-lg card-content" style={{ backgroundColor: 'rgba(203, 213, 224, 0.3)'}}>
+          <div className="mx-5 my-20 max-w-sm rounded shadow-lg card-content p-5" style={{ backgroundColor: 'rgba(203, 213, 224, 0.3)'}}>
             <div className="flex items-center justify-between mb-8">
               <Avatar src="https://picsum.photos/id/64/200/300"/>
               <ArrowForward />

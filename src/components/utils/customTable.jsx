@@ -151,8 +151,8 @@ function CustomTable() {
               <TableCell>{order.dueDate}</TableCell>
               <TableCell>{<Rating value={order.rating} readOnly sx={{ fontSize: '1rem'}}/>}</TableCell>
               <TableCell>
-                <p style={{ color: getColor(order.status)}}>
-                  <Circle sx={{ fontSize: '8px'}}/>
+                <p style={{ color: getColor(order.status), display: 'flex', alignItems: 'center', gap: '0.2rem'}}>
+                  <Circle sx={{ fontSize: '5px'}}/>
                   { ' '}
                 {order.status}
                 </p>
