@@ -6,7 +6,7 @@ const TopCard = ({ title, number, color}) => {
         <p className="text-2xl my-1 font-semibold">$ {number}</p>
         <p>graph</p>
       </div>
-      <p>Since last week <span className="inline-block bg-gray-200 rounded-sm px-3 py-1 text-sm font-semibold text-gray-700 mr-2">+13.4%</span></p>
+      <p className="text-sm opacity-50">Since last week <span className="inline-block bg-gray-200 rounded-sm px-3 py-1 text-sm font-semibold text-gray-700 mr-2">+13.4%</span></p>
     </div>
   );
 }
