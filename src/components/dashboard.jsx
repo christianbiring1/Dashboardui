@@ -4,7 +4,8 @@ import {
   Badge,
 } from "@mui/material";
 import { Dashboard, Assessment, DonutSmall, DescriptionOutlined, Notifications,
-  ExpandMore, Circle } from '@mui/icons-material';
+  ExpandMore, Circle, 
+  ArrowForward} from '@mui/icons-material';
 
 import Content from "./content";
 
@@ -34,7 +35,7 @@ const DashboardComponent = () => {
               color: '#ecfdf5',
             }
           }}
-          className="bg-indigo-950"
+          className="sidebar"
         >
           <Box sx={{ display: 'flex', padding: '1rem 2rem 0', margin: '1rem 0', alignItems: 'center', gap: '1rem'}}>
             <Avatar />
@@ -179,10 +180,19 @@ const DashboardComponent = () => {
                 </ListItem>
             </List>
           </nav>
+          <div className="mx-5 my-20">
+            <div className="flex items-center justify-between mb-8">
+              <Avatar />
+              <ArrowForward />
+            </div>
+            <p className="text-xl text-gray-300">WPR Pascal</p>
+            <p className="text-gray-500 text-sm">random@gmail.com</p>
+          </div>
         </Drawer>
       <Box
         component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p:2, margin: '1rem 5rem' }}
+        sx={{ flexGrow: 1, padding: '1rem 0.5rem 1rem 4rem' }}
+        className="bg-neutral-100"
       >
         <Content />
       </Box>

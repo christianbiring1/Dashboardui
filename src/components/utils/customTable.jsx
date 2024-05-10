@@ -149,7 +149,7 @@ function CustomTable() {
               <TableCell>{order.order}</TableCell>
               <TableCell>{order.out}</TableCell>
               <TableCell>{order.dueDate}</TableCell>
-              <TableCell>{<Rating value={order.rating} readOnly/>}</TableCell>
+              <TableCell>{<Rating value={order.rating} readOnly sx={{ fontSize: '1rem'}}/>}</TableCell>
               <TableCell>
                 <p style={{ color: getColor(order.status)}}>
                   <Circle sx={{ fontSize: '8px'}}/>
