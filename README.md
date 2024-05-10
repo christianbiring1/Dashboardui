@@ -1,8 +1,53 @@
-# React + Vite
+# DashBoard UI demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Description of the project.
 
-Currently, two official plugins are available:
+This project is about building a web application admin Dashboard
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Built With
+
+- `ReactJS`
+- `TailwindCSS`
+- `Material UI`
+- `Vite for hmr`
+
+## Live Demo
+
+You can check the live demo of my project [here](https://dashboardui-demo.netlify.app/)
+
+### Prerequisites
+
+- `N/A`
+
+## Set up
+
+- `git clone git@github.com:christianbiring1/Dashboardui.git`
+- `npm install`
+- `cd Dashboardui`
+- `npm run dev`
+
+## Author
+
+👤 **Christian biringanine**
+
+- GitHub: [@christianbiring1](https://github.com/christianbiring1)
+- Twitter: [@christianbirin4](https://twitter.com/christianbirin4)
+- LinkedIn: [Christian Biringanine](https://linkedin.com/in/christian-biringanine/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/christianbiring1/metrics-webapp/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone who will take a glance to this project
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
